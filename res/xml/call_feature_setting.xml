@@ -44,6 +44,14 @@
         android:key="button_voicemail_category_key"
         android:title="@string/voicemail"
         android:persistent="false">
+
+      <CheckBoxPreference
+          android:defaultValue="false"
+          android:key="button_mwi_notification_key"
+          android:title="@string/mwi_notification_title"
+          android:persistent="false"
+          android:summary="@string/mwi_notification_summary" />
+
       <ListPreference
           android:key="button_voicemail_provider_key"
           android:title="@string/voicemail_provider"
@@ -83,6 +91,29 @@
           android:dialogTitle="@string/voicemail_notification_vibarte_when_dialog_title" />
   </PreferenceCategory>
 
+  <PreferenceCategory android:key="pref_advanced_settings" android:title="@string/advanced_setting">
+    <CheckBoxPreference
+        android:key="button_vibrate_outgoing"
+        android:title="@string/vibrate_outgoing"
+        android:persistent="true"
+        android:summary="@string/vibrate_outgoing_sum"/>
+    <CheckBoxPreference
+        android:key="button_vibrate_45"
+        android:title="@string/vibrate_45"
+        android:persistent="true"
+        android:summary="@string/vibrate_45_sum"/>
+    <CheckBoxPreference
+        android:key="button_vibrate_hangup"
+        android:title="@string/vibrate_hangup"
+        android:persistent="true"
+        android:summary="@string/vibrate_hangup_sum"/>
+    <CheckBoxPreference
+        android:key="button_vibrate_call_waiting"
+        android:title="@string/vibrate_call_waiting"
+        android:persistent="true"
+        android:summary="@string/vibrate_call_waiting_sum"/>
+  </PreferenceCategory>
+
   <PreferenceCategory android:key="button_misc_category_key"
         android:title="@string/other_settings"
         android:persistent="false" />
@@ -100,14 +131,6 @@
         android:persistent="false"
         android:entries="@array/tty_mode_entries"
         android:entryValues="@array/tty_mode_values"/>
-
-    <ListPreference
-        android:key="button_ring_delay_key"
-        android:title="@string/ring_delay_title"
-        android:summary="@string/ring_delay_summary"
-        android:persistent="true"
-        android:entries="@array/ring_delay_entries"
-        android:entryValues="@array/ring_delay_values"/>
 
      <CheckBoxPreference
         android:key="button_hac_key"
@@ -149,37 +172,6 @@
             android:targetPackage="com.android.phone"
             android:targetClass="com.android.phone.CdmaCallOptions"/>
     </PreferenceScreen>
-    
-    <CheckBoxPreference
-        android:key="button_landscape_key"
-        android:title="@string/landscape_mode_title"
-        android:persistent="true"
-        android:summary="@string/landscape_mode_summary"/>
-
-    <CheckBoxPreference
-        android:key="button_speaker_mode_key"
-        android:title="@string/enable_speaker_mode_title"
-        android:persistent="true"
-        android:dependency="button_landscape_key"
-        android:summary="@string/enable_speaker_mode_summary"/>
-
-    <CheckBoxPreference
-        android:key="button_statusbar_key"
-        android:title="@string/enable_statusbar_title"
-        android:persistent="true"
-        android:summary="@string/enable_statusbar_summary"/> 
-        
-     <CheckBoxPreference
-        android:key="button_lightsout_key"
-        android:title="@string/disable_lightsout_title"
-        android:persistent="true"
-        android:summary="@string/disable_lightsout_summary"/> 
-     
-     <CheckBoxPreference
-        android:key="button_exit_to_home_screen_key"
-        android:title="@string/exit_to_home_screen_title"
-        android:persistent="true"
-        android:summary="@string/exit_to_home_screen_summary"/>
 
     <PreferenceScreen
         android:title="@string/dialer_ui_settings_title"
